@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-	<title>Ejemplo básico</title>
-	<meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Archivos</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-	<h1>La aplicación esta corriendo!</h1>
+    <div class="contenedor">
+        <h1 class="tareasPH">Tareas por hacer</h1>
+        <form id="fileForm">
+            <input type="text" id="fileName" placeholder="Ingresa tarea">
+            <button class="boton" id="agregar" type="button">Agregar</button>
+        </form>
 
-	<script src="./index.js" type="module"></script>
+        <ul id="selectedFiles"></ul>
+        <div class="tareasInfo">
+            <p class="tarea">Tareas <br> completadas</p>
+            <div class="contador">
+                <span id="completedCount">0</span>
+                <span id="nombre"></span>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
 </body>
 
 </html>

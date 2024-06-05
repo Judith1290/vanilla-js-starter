@@ -1,0 +1,100 @@
+body {
+    /* background-color: rgb(111, 111, 111); Color de fondo del cuerpo */
+    background: url(./img/1163940.jpeg) no-repeat;
+    width: 1050px;
+    /* Ancho exacto del cuerpo */
+    height: 1050px;
+    /* Altura exacta del cuerpo */
+    margin: 0 auto;
+    /* Centra el cuerpo horizontalmente */
+}
+
+.contenedor {
+    width: 50%;
+    /* Ancho del contenedor padre */
+    height: 700px;
+    /* Altura */
+    margin-top: 10%;
+    /* Margen superior */
+    position: absolute;
+    /* Establece posición absoluta */
+    left: 25%;
+    /* Centra el contenedor horizontalmente */
+    border: 5px solid rgb(211, 208, 208);
+    /* Borde sólido de 5px de color gris */
+    background-color: rgb(211, 208, 208);
+    /* Color de fondo del contenedor */
+    padding: 20px;
+}
+
+.tareasPH {
+    text-align: center;
+    width: 74%;
+    /* Ancho del 74% del contenedor padre */
+    height: 50px;
+    /* Altura de 50px */
+    margin-left: 80px;
+    border: 5px solid #f7f6f6;
+    /* Borde sólido de 5px de color gris */
+}
+
+.boton {
+    color: #030202;
+    border: 2px solid rgb(216, 2, 134);
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: block;
+    /* Hace que el botón ocupe toda la anchura disponible y esté uno debajo del otro */
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #D80286;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    margin: 10px 0;
+    /* Espaciado entre los botones */
+}
+
+.boton:hover {
+    box-shadow: inset 0 100px 0 0 #D80286;
+}
+
+.tareasInfo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.tarea {
+    border: 1px solid #000;
+    /* Borde de la tarea completada */
+    padding: 10px;
+    background-color: #FFF;
+    margin-right: 10px;
+    /* Margen entre los elementos */
+    margin-top: 120px;
+}
+
+.contador {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    /* Color de fondo del contador */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    margin-top: 100px;
+}
+
+#contador {
+    font-size: 16px;
+    font-weight: bold;
+
+}
