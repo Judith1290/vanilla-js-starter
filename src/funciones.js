@@ -1,5 +1,4 @@
-import{guardarTareas,deleteUploadedFile,extraerTarea} from "./index.js"
-
+import { guardarTareas, deleteUploadedFile, extraerTarea } from "./index.js"
 let fileData = [];
 
 // Seleccionar el botón de agregar y el campo de entrada
@@ -29,7 +28,7 @@ async function agregarTarea() {
     }
 
     // Crear nueva tarea
-    const nuevaTarea = { name: fileName };
+    const nuevaTarea = { name: fileName, completed: false };
 
     // Guardar la nueva tarea en el servidor
     const tareaGuardada = await guardarTareas(nuevaTarea);
@@ -54,6 +53,16 @@ function displayUploadedFile(tarea) {
     // Crear elemento <li> para mostrar el archivo subido
     const listItem = document.createElement("li");
 
+    // Crear un checkbox para marcar la tarea como completada
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = tarea.completed;
+    checkbox.addEventListener("change", function () {
+        tarea.completed = checkbox.checked;
+        //  .push actualizarEstadoTarea(tarea);  // Guardar el estado actualizado en el servidor
+        updateCompletedCount();
+    });
+
     // Crear un span para el nombre del archivo
     const fileText = document.createElement("span");
     fileText.textContent = tarea.name;
@@ -73,15 +82,17 @@ function displayUploadedFile(tarea) {
         }
     };
 
+    listItem.appendChild(checkbox);
     listItem.appendChild(fileText);
     listItem.appendChild(deleteButton);
 
     // Mostrar el archivo subido en la lista de archivos subidos
     document.getElementById("selectedFiles").appendChild(listItem);
 }
+
 // Función para actualizar el contador de tareas completadas
 function updateCompletedCount() {
-    const completedCount = fileData.length;
+    const completedCount = fileData.filter(t => t.completed).length;
     document.getElementById("completedCount").textContent = completedCount;
 }
 
@@ -99,6 +110,7 @@ async function mostrarTareas() {
         console.error("Error al realizar la solicitud:", error);
     }
 }
+
 
 // Inicializar las tareas al cargar la página
 window.addEventListener("load", mostrarTareas);

@@ -59,4 +59,5 @@ async function extraerTarea() {
         return [];
     }
 }
-export{guardarTareas,deleteUploadedFile,extraerTarea};
+
+export { guardarTareas, deleteUploadedFile, extraerTarea, };
